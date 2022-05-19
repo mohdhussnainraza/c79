@@ -1,66 +1,50 @@
-<html>
-<head>
-<title>c79</title>
-<link rel="stylesheet" type="text/css" href="style.css">
+<html><head>
+    <title>Pizzeria</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+<script src="main.js"></script>
 </head>
+
 <body>
-    <center>
-<h3 style="margin-top: 20px; margin-bottom: 20px;">
-lisg of the students in my class
-</h3>
-<div>
-<span>1</span>
-<input type="text" placeholder="name of the student" id="name_of_the_student_1">
-<br>
+    <div class="topnav">
+        <a class="active" href="#">Pizzeria</a>
+        <div class="topnav-right">
+         <a href="#viewblock">View Menu</a>
+         <a href="#addTopings">Suggest Topping</a>
+        </div>
+    </div>
 
-<span>2</span>
-<input type="text" placeholder="name of the student" id="name_of_the_student_2">
-<br>
+    <div class="row" id="viewblock">
+        <div class="img_div"> 
+            <img class="img-responsive" src="pizza.png">
+        </div>
+        <div class="menu_div">
+            <button id="menu_list" onclick="getmenu()">Show Menu</button>
+           <div id="display_menu"></div>
+        </div>
+    </div>
+    
+    <div class="newRow" id="addTopings">
+        <div class="block1">
+            <input id="add_item" placeholder="Type here to add toppings?"> <br><br>
+			<button class= "btn btn-success" onclick="add_top()">Add Suggestion</button><br><br>
+            <button id="add_toppings" onclick="add_item()">Show Pizza</button>
+        </div>
+		
+        <div class="block2">
+            <div id="display_addedmenu">
+            </div>
+        </div>
+        
+    </div>
 
-<span>3</span>
-<input type="text" placeholder="name of the student" id="name_of_the_student_3">
-<br>
+    <div>
+        <img class="img-responsive" src="topping.png">
+    </div>
 
-<span>4</span>
-<input type="text" placeholder="name of the student" id="name_of_the_student_4">
-<br>
-</div>
-<button onclick="submit();" id="submit_button">
-submit
-</button>
 
-<div id="display_name" style="font-weight: bold;">
-
-</div>
-<button onclick="sorting();" id="sort_button">
-sort
-</button>
-</center>
-<script>
-var name_of_the_student_array = [];
-function submit(){
-var name_1 = document.getElementById("name_of_the_student_1").value;
-var name_2 = document.getElementById("name_of_the_student_2").value;
-var name_3 = document.getElementById("name_of_the_student_3").value;
-var name_4 = document.getElementById("name_of_the_student_4").value;
-name_of_the_student_array.push(name_1);
-name_of_the_student_array.push(name_2);
-name_of_the_student_array.push(name_3);
-name_of_the_student_array.push(name_4);
-console.log(name_of_the_student_array);
-
-document.getElementById("display_name").innerHTML = name_of_the_student_array;
-document.getElementById("submit_button").style.display="none";
-document.getElementById("sort_button").style.display="inline-block";
-
-}
-
-function sorting()
-{
-name_of_the_student_array.sort();
-console.log(name_of_the_student_array);
-document.getElementById("display_name").innerHTML = name_of_the_student_array;
-
-}
-</script>
-</html> 
+</body></html>
